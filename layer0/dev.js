@@ -17,7 +17,7 @@ module.exports = function () {
   })
   return createDevServer({
     label: '[Astro SSR]',
-    command: (port) => `npx astro dev -- --port ${port}`,
+    command: (port) => `npx astro dev --port ${port}`,
     ready: [/listening on/i],
   })
 }
