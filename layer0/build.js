@@ -1,5 +1,6 @@
 const { join } = require('path')
 const { exit } = require('process')
+const { buildSync } = require('esbuild')
 const { nodeFileTrace } = require('@vercel/nft')
 const { DeploymentBuilder } = require('@layer0/core/deploy')
 
@@ -13,6 +14,17 @@ module.exports = async function build(options) {
     await builder.exec(command)
     builder.addJSAsset(join(appDir, 'dist'))
     builder.addJSAsset(join(appDir, 'server'))
+    buildSync({
+      entryPoints: [`${appDir}/sw/service-worker.js`],
+      outfile: `${appDir}/dist/service-worker.js`,
+      minify: true,
+      bundle: true,
+      define: {
+        'process.env.NODE_ENV': '"production"',
+        'process.env.LAYER0_PREFETCH_HEADER_VALUE': '"1"',
+        'process.env.LAYER0_PREFETCH_CACHE_NAME': '"prefetch"',
+      },
+    })
     let dictNodeModules = await getNodeModules()
     Object.keys(dictNodeModules).forEach(async (i) => {
       await builder.addJSAsset(`${appDir}/${i}`)
