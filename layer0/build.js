@@ -1,5 +1,4 @@
 const { join } = require('path')
-const esbuild = require('esbuild')
 const { exit } = require('process')
 const { nodeFileTrace } = require('@vercel/nft')
 const { DeploymentBuilder } = require('@layer0/core/deploy')
