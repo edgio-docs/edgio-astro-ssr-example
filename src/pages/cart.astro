@@ -48,13 +48,7 @@ const cart = await getCart(Astro.request)
         </tbody>
       </table>
     </Container>
-    <script is:inline defer>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/service-worker.js')
-        })
-      }
-    </script>
+    <script is:inline defer src="/__layer0__/client/install.js"></script>
     <script is:inline defer src="/__layer0__/devtools/install.js"></script>
   </body>
 </html>
