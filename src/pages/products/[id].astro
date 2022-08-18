@@ -41,5 +41,15 @@ const product = await getProduct(Astro.request, id)
         </figcaption>
       </figure>
     </Container>
+    <script is:inline defer>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          try {
+            if (navigator.serviceWorker.controller.state !== 'activated') navigator.serviceWorker.register('/service-worker.js')
+          } catch {}
+        })
+      }
+    </script>
+    <script is:inline defer src="/__layer0__/devtools/install.js"></script>
   </body>
 </html>
