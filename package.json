@@ -11,7 +11,7 @@
     "layer0:build": "layer0 build",
     "layer0:deploy": "layer0 deploy",
     "layer0:production": "layer0 run --production",
-    "format": "prettier '**/*' --write --ignore-unknown"
+    "format": "prettier --write '**/*' --ignore-unknown"
   },
   "devDependencies": {
     "@astrojs/node": "^1.0.0",
@@ -25,6 +25,7 @@
     "concurrently": "^7.2.1",
     "lightcookie": "^1.0.25",
     "prettier": "^2.7.1",
+    "prettier-plugin-astro": "^0.5.0",
     "unocss": "^0.15.6",
     "vite-imagetools": "^4.0.4"
   },
