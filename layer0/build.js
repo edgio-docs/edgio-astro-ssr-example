@@ -10,7 +10,7 @@ const builder = new DeploymentBuilder(appDir)
 module.exports = async function build(options) {
   try {
     builder.clearPreviousBuildOutput()
-    let command = 'npm run build'
+    let command = 'npx astro build'
     await builder.exec(command)
     builder.addJSAsset(join(appDir, 'dist'))
     builder.addJSAsset(join(appDir, 'server'))
