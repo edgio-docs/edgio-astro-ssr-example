@@ -1,6 +1,6 @@
 function initMetrics() {
   new Layer0.Metrics({
-    token: '60b7c707-f5cb-4207-ad0e-ce65848ca570',
+    token: '4793b50d-db03-43a2-9584-c971e06a6c88',
   }).collect()
 }
 
