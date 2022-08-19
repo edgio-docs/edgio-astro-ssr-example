@@ -1,9 +1,10 @@
 import node from '@astrojs/node'
-import svelte from '@astrojs/svelte'
+import react from '@astrojs/react'
+import tailwind from '@astrojs/tailwind'
 import { defineConfig } from 'astro/config'
 
 export default defineConfig({
   output: 'server',
   adapter: node(),
-  integrations: [svelte()],
+  integrations: [react(), tailwind()]
 })
