@@ -6,5 +6,5 @@ import { defineConfig } from 'astro/config'
 export default defineConfig({
   output: 'server',
   adapter: node(),
-  integrations: [react(), tailwind()]
+  integrations: [react(), tailwind()],
 })

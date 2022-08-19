@@ -30,7 +30,7 @@ router.match('/l0-opt', IMAGE_CACHE_HANDLER)
 if (isProductionBuild()) {
   // Create serve static routes for the all the assets under dist/client folder
   router.static('dist/client')
-  
+
   // Cache but not in 0 dev mode
   router.match('/', ONE_DAY_CACHE_HANDLER)
   router.match('/about', ONE_DAY_CACHE_HANDLER)
