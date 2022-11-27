@@ -1,3 +1,11 @@
+export const PAGE_CACHE_HANDLER = ({ cache }) => {
+  cache({
+    edge: {
+      maxAgeSeconds: 60,
+    },
+  })
+}
+
 export const API_CACHE_HANDLER = ({ cache, proxy }) => {
   cache({
     edge: {

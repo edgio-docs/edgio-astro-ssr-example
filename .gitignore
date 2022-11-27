@@ -22,3 +22,5 @@ pnpm-debug.log*
 
 # vs-code specific files
 /.vscode
+
+sw/bundled-service-worker.js

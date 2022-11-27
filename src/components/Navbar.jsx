@@ -1,7 +1,14 @@
 import React from 'react'
+import { useEffect } from 'react'
 import { Prefetch } from '@edgio/react'
+import { install } from '@edgio/prefetch/window'
+import installDevtools from '@edgio/devtools/install'
 
 const Navbar = () => {
+  useEffect(() => {
+    install()
+    installDevtools()
+  }, [])
   return (
     <div className="flex flex-row flex-wrap items-center justify-between py-3 px-5">
       <a href="/">
